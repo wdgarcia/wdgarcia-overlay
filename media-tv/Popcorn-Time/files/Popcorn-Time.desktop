@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Popcorn Time
+Comment=Watch torrent movies instantly
+Exec=Popcorn-Time %U
+Icon=Popcorn-Time
+Terminal=false
+Type=Application
+Categories=Player;AudioVideo;Video;Network;

@@ -8,8 +8,8 @@ inherit eutils fdo-mime multilib
 
 DESCRIPTION="Watch Movies and TV Shows instantly"
 HOMEPAGE="https://popcorntime.sh/"
-SRC_URI="x86?   ( https://get.popcorntime.sh/build/Popcorn-Time-0.3.10-Linux-32.tar.xz )
-amd64? ( https://get.popcorntime.sh/build/Popcorn-Time-0.3.10-Linux-64.tar.xz )"
+SRC_URI="x86?   ( https://get.popcorntime.sh/build/${PN}-${PVR}-Linux-32.tar.xz )
+amd64? ( https://get.popcorntime.sh/build/${PN}-${PVR}-Linux-64.tar.xz )"
 
 LICENSE="GPL-3"
 SLOT="0"
