@@ -8,29 +8,23 @@ inherit eutils fdo-mime multilib
 
 DESCRIPTION="Sozi is a zooming presentation editor and player"
 HOMEPAGE="http://http://sozi.baierouge.fr/"
-SRC_URI="x86?   ( https://github.com/senshu/Sozi/releases/download/${PVR}/${PN}-release-${PVR}-30213629.zip )"
+SRC_URI="x86?   ( https://github.com/wdgarcia/wdgarcia-overlay/tree/master/media-gfx/sozi/sozi-13.11 )"
 
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
-RESTRICT="splitdebug strip"
 
-DEPEND="app-arch/unzip
-        >=media-gfx/inkscape-0.48"
+DEPEND=">=media-gfx/inkscape-0.48"
 
 S="${WORKDIR}" 
 
-src_unpack () {
-unpack ${A}
-cd "${S}"
-}
-
 src_install() {
        
-        dodir /usr/share/inkscape/extensions/
-        cp -R "${S}/" "${D}/" || die 
-        doexe -R sozi sozi_extras_link.inx sozi_extras_link.py sozi_extras_media.inx sozi_extras_media.py sozi_extras_upgrade.inx sozi_extras_upgrade.py sozi.inx sozi.py
+        dodir /usr/share/inkscape/extensions
+        insinto /usr/share/inkscape/extensions
+        doins "${FILESDIR}"/usr/share/inkscape/extensions
+        doexe -r sozi sozi_extras_link.inx sozi_extras_link.py sozi_extras_media.inx sozi_extras_media.py sozi_extras_upgrade.inx sozi_extras_upgrade.py sozi.inx sozi.py
         }
 
 pkg_postinst() {
