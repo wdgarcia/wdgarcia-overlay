@@ -8,7 +8,7 @@ inherit eutils fdo-mime multilib
 
 DESCRIPTION="Sozi is a zooming presentation editor and player"
 HOMEPAGE="https://sozi.baierouge.fr"
-SRC_URI="amd64?   ( https://github.com/senshu/Sozi/releases/download/16.02-fix344/${PN}-${PVR}.141048-linux64.tgz )"
+SRC_URI="amd64?   ( https://github.com/senshu/Sozi/releases/download/16.02-fix344/${PN}-${PVR}.141048-linux64.tgz -> Sozi-${PV}.tgz )"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
@@ -26,7 +26,7 @@ RDEPEND="media-libs/alsa-lib
 	net-libs/nodejs
 	media-fonts/corefonts"
 
-S="${WORKDIR}"/${PN}-${PV}.141048-linux64
+S="${WORKDIR}"/Sozi-${PV}.141048-linux64
 
 src_install() {
 	
@@ -37,8 +37,7 @@ src_install() {
 	doins -r icudtl.dat locales nw.pak libffmpegsumo.so 
     chmod +x icudtl.dat libffmpegsumo.so nw.pak Sozi
     
-    dosym /$(get_libdir)/libudev.so.1 /opt/${PN}/libudev.so.0
-	dosym /opt/${PN}/Sozi /usr/bin/${PN}
+    dosym /opt/${PN}/Sozi /usr/bin/${PN}
 	make_wrapper ${PN} ./Sozi /opt/${PN} /opt/bin
 	
 	insinto /usr/share/applications

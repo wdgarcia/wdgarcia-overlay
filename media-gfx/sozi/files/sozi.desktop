@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Sozi
 Comment=A zooming presentation based on SVG, using JavaScript
-Exec=Sozi %U
+Exec=sozi %U
 Icon=Sozi
 Terminal=false
 Type=Application
