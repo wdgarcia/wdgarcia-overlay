@@ -2,7 +2,7 @@
 Name=Sozi
 Comment=A zooming presentation based on SVG, using JavaScript
 Exec=sozi %U
-Icon=Sozi
+Icon=sozi
 Terminal=false
 Type=Application
 Categories=Office;
