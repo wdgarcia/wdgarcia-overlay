@@ -40,6 +40,12 @@ src_install() {
     dosym /$(get_libdir)/libudev.so.1 /opt/${PN}/libudev.so.0
 	dosym /opt/${PN}/Sozi /usr/bin/${PN}
 	make_wrapper ${PN} ./Sozi /opt/${PN} /opt/bin
+	
+	insinto /usr/share/applications
+	doins "${FILESDIR}"/${PN}.desktop
+
+	insinto /usr/share/pixmaps
+	doins "${FILESDIR}"/${PN}.png
 
 }
 
