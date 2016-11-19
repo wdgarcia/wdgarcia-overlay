@@ -8,8 +8,7 @@ inherit eutils fdo-mime multilib
 
 DESCRIPTION="Sozi is a zooming presentation editor and player"
 HOMEPAGE="https://sozi.baierouge.fr"
-SRC_URI="x86? ( https://github.com/senshu/Sozi/releases/download/16.02-fix344/${PN}-${PVR}.141048-linux32.tgz )
-amd64?   ( https://github.com/senshu/Sozi/releases/download/16.02-fix344/${PN}-${PVR}.141048-linux64.tgz )"
+SRC_URI="amd64?   ( https://github.com/senshu/Sozi/releases/download/16.02-fix344/${PN}-${PVR}.141048-linux64.tgz )"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
@@ -27,20 +26,26 @@ RDEPEND="media-libs/alsa-lib
 	net-libs/nodejs
 	media-fonts/corefonts"
 
-S="${WORKDIR}"
+S="${WORKDIR}"/${PN}-${PV}.141048-linux64
 
 src_install() {
 	
 	exeinto /opt/${PN}
 	doexe Sozi
-
+	
 	insinto /opt/${PN}
-	doins -r icudtl.dat locales nw.pak libffmpegsumo.so Sozi
+	doins -r icudtl.dat locales nw.pak libffmpegsumo.so 
+    chmod +x icudtl.dat libffmpegsumo.so nw.pak Sozi
     
+    dosym /$(get_libdir)/libudev.so.1 /opt/${PN}/libudev.so.0
+	dosym /opt/${PN}/Sozi /usr/bin/${PN}
+	make_wrapper ${PN} ./Sozi /opt/${PN} /opt/bin
+
 }
 
 pkg_postinst() {
-	fdo-mime_desktop_database_update
+
+    fdo-mime_desktop_database_update
 	elog "${PN} ${PV} installed successfully in your system"
 }
 
