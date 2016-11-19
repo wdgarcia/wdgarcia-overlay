@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Soulseek
+Comment=p2p Application
+Exec=soulseek-qt %U
+Icon=soulseek-qt
+Terminal=false
+Type=Application
+Categories=Network;
