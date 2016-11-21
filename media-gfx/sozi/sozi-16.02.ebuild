@@ -23,7 +23,6 @@ RDEPEND="media-libs/alsa-lib
     x11-libs/libXtst
     dev-libs/nss
 	app-misc/jq
-	net-libs/nodejs
 	media-fonts/corefonts"
 
 S="${WORKDIR}"/Sozi-${PV}.141048-linux64
