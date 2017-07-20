@@ -8,32 +8,25 @@ inherit eutils autotools
 DESCRIPTION="High quality television application for use with video capture cards"
 HOMEPAGE="https://linuxtv.org/"
 SRC_URI="https://linuxtv.org/downloads/tvtime/${PN}-${PV}.tar.gz"
-LINGUAS="de en es"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="amd64 ppc x86 ~x86"
-IUSE="nls xinerama"
+IUSE="xinerama"
 
-RDEPEND="x11-libs/libSM
-	x11-libs/libICE
-	x11-libs/libX11
-	x11-libs/libXext
-	x11-libs/libXv
-	x11-libs/libXxf86vm
-	xinerama? ( x11-libs/libXinerama )
-	x11-libs/libXtst
-	x11-libs/libXau
-	x11-libs/libXdmcp
-	>=media-libs/freetype-2
-	>=sys-libs/zlib-1.1.4
-	>=media-libs/libpng-1.2
-	>=dev-libs/libxml2-2.5.11
-	nls? ( virtual/libintl )"
+RDEPEND="media-libs/alsa-lib
+         media-libs/freetype
+         media-libs/libpng
+         x11-libs/libSM
+         x11-libs/libXinerama
+         dev-libs/libxml2
+         x11-libs/libXtst
+         x11-libs/libXv
+         x11-libs/libXxf86vm
+         x11-libs/libXt
+         media-tv/v4l-utils"
+         
 
-DEPEND="${RDEPEND}
-	nls? ( sys-devel/gettext )
-	virtual/pkgconfig"
-
+DEPEND="${RDEPEND} sys-devel/gettext"
 DOCS=( ChangeLog AUTHORS NEWS README )
 
 src_prepare() {
@@ -41,7 +34,7 @@ src_prepare() {
 }
 
 src_configure() {
-econf --prefix=/usr/ --mandir=/usr/share/man --localstatedir=/var --sysconfdir=/etc --disable-nls
+econf --with-included-getext
 
 }
 
