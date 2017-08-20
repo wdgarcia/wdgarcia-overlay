@@ -27,21 +27,21 @@ for x in ${LANGS}; do
 done
 
 RDEPEND="sys-apps/dbus[X]
-	dev-python/gst-python:0.10[${PYTHON_USEDEP}]
 	dev-python/pygtk[${PYTHON_USEDEP}]
 	dev-python/lxml[${PYTHON_USEDEP}]
 	dev-python/pyxdg[${PYTHON_USEDEP}]
 	dev-python/pygobject:2[${PYTHON_USEDEP}]
 	dev-python/notify-python[${PYTHON_USEDEP}]
-	media-libs/gst-plugins-good:0.10
-	media-libs/gst-plugins-ugly:0.10
-	media-plugins/gst-plugins-alsa:0.10
-	media-plugins/gst-plugins-libmms:0.10
-	media-plugins/gst-plugins-ffmpeg:0.10
-	media-plugins/gst-plugins-mad:0.10
-	media-plugins/gst-plugins-ogg:0.10
-	media-plugins/gst-plugins-soup:0.10
-	media-plugins/gst-plugins-vorbis:0.10"
+	dev-python/dbus-python[${PYTHON_USEDEP}]
+    dev-libs/libappindicator[${PYTHON_USEDEP}]
+	media-libs/gst-plugins-good
+	media-libs/gst-plugins-ugly
+	media-plugins/gst-plugins-alsa
+	media-plugins/gst-plugins-libmms
+	media-plugins/gst-plugins-mad
+	media-plugins/gst-plugins-ogg
+	media-plugins/gst-plugins-soup
+	media-plugins/gst-plugins-vorbis"
 
 DEPEND="${RDEPEND}"
 

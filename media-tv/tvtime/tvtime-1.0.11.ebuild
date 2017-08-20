@@ -34,7 +34,7 @@ src_prepare() {
 }
 
 src_configure() {
-econf --with-included-getext
+econf 
 
 }
 
