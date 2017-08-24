@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -9,7 +9,7 @@ inherit eutils fdo-mime multilib
 DESCRIPTION="Sozi is a zooming presentation editor and player"
 HOMEPAGE="https://sozi.baierouge.fr"
 SRC_URI="
-    x86?   ( https://github.com/senshu/Sozi/releases/download/${PV}/Sozi-${PV}.021848-linux-x64.tgz -> ${PN}-${PV}.tgz )
+    x86? ( https://github.com/senshu/Sozi/releases/download/${PV}/Sozi-${PV}.021848-linux-x64.tgz -> ${PN}-${PV}.tgz )
     amd64? ( https://github.com/senshu/Sozi/releases/download/${PV}/Sozi-${PV}.021848-linux-x64.tgz -> ${PN}-${PV}.tgz )
 "
 LICENSE="GPL-3"
