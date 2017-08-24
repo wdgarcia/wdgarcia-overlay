@@ -32,12 +32,12 @@ S="${WORKDIR}"
 
 src_prepare() {
 eapply_user
-cd "${WORKDIR}"
+cd "${S}"
 mv Sozi-* ${PN}-${PV}
 }
 
 src_install() {
-    cd "${WORKDIR}/${PN}-${PV}"
+    cd "${S}/${PN}-${PV}"
 	exeinto /opt/${PN}
 	doexe Sozi
 	insinto /opt/${PN}
