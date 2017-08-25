@@ -3,7 +3,7 @@
 <repositories version="1.0">
 	<repo priority="50" quality="experimental" status="unofficial">
 		<name>wdgarcia-overlay</name>
-		<description>Aplicaciones locales</description>
+		<description>Miscelaneous Applications</description>
 		<homepage>https://github.com/wdgarcia/wdgarcia-overlay</homepage>
 		<owner>
 			<email>williamsengland@hotmail.com</email>
