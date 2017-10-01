@@ -4,12 +4,12 @@
 
 EAPI=6
 
-inherit 
+inherit git-r3
 
 DESCRIPTION="TrueType fonts from the Google Fonts project"
 HOMEPAGE="https://fonts.google.com/"
-SRC_URI="https://github.com/google/fonts/archive/master.zip"
-
+#SRC_URI="https://github.com/google/fonts/archive/master.zip"
+EGIT_REPO_URI="git://github.com/google/fonts"
 LICENSE="various"
 SLOT="0"
 KEYWORDS=""
@@ -21,7 +21,7 @@ app-arch/unzip
 RDEPEND="${DEPEND}
 	"
 
-S="${WORKDIR}/fonts-master"
+#S="${WORKDIR}/fonts-master"
 
 src_install () {
 insinto /usr/share/fonts/TTF
